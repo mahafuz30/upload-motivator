@@ -200,4 +200,4 @@ const OtherAttributes = [
     }
 ]
 
-export {PriceSizeInventory};
+export {PriceSizeInventory,ProductDetails, OtherAttributes};

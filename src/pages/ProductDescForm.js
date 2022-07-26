@@ -4,7 +4,7 @@ import FormFieldGenerator from "../components/FormFieldGenerator";
 import FormHeader from "../components/FormHeader";
 import Header from "../components/Header";
 import ImageHandeler from "../components/ImageHandeler";
-import { PriceSizeInventory } from "../Utils/DummyFormData";
+import { PriceSizeInventory, ProductDetails, OtherAttributes } from "../Utils/DummyFormData";
 
 export default class ProductDescForm extends Component {
   render() {
@@ -20,11 +20,11 @@ export default class ProductDescForm extends Component {
             />
 
             <FormFieldGenerator
-              formField={PriceSizeInventory}
+              formField={ProductDetails}
               text={"Product Details"}
             />
             <FormFieldGenerator
-              formField={PriceSizeInventory}
+              formField={OtherAttributes}
               text={"Other Attributes"}
             />
           </Stack>
