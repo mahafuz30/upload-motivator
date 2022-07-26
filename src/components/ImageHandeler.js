@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Container, InputGroup, Form, Button } from "react-bootstrap";
+import { Container, InputGroup, Form, Button, Stack } from "react-bootstrap";
 
 export default function ImageHandeler() {
   const inputRef = useRef(null);
@@ -8,10 +8,15 @@ export default function ImageHandeler() {
   };
 
   const [fileObj, setfileObj] = useState([]);
-  const [fileArray, setFileArray] = useState([]);
   const handelImage = (e) => {
     setfileObj([...fileObj, e.target.files]);
   };
+
+  const handelRemove = (idx)=>{
+    const fileObjM = [...fileObj];
+    fileObjM.splice(idx,1);
+    setfileObj(fileObjM);
+  }
 
   const [hover, setHover] = useState(false);
   return (
@@ -26,12 +31,15 @@ export default function ImageHandeler() {
         style={{
           display: "flex",
           flexDirection: "row",
+          justifyContent:"flex-start"
         }}
       >
         {fileObj.map((img, idx) => {
           const imgUrl = URL.createObjectURL(img[0]);
           return (
-            <div key={idx}>
+            <Stack key={idx}
+            style={{height:200, alignItems:"center"}}
+            >
               <img
                 src={imgUrl}
                 style={{
@@ -41,8 +49,12 @@ export default function ImageHandeler() {
                 }}
                 alt={`${idx} product image`}
               />
-              ;
-            </div>
+              <Button 
+              variant="danger" 
+              style={{width:100}}
+              onClick={(e)=> handelRemove(idx)}
+              > Remove </Button>
+            </Stack>
           );
         })}
         <div

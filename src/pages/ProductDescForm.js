@@ -12,7 +12,7 @@ export default class ProductDescForm extends Component {
       <Container direction="vertical" gap={1}>
         <Header hideButton={true} />
         <Form>
-          <Stack style={{ marginTop: 100 }}>
+          <Stack style={{ marginTop: 20 }}>
             <ImageHandeler/>
             <FormFieldGenerator
               formField={PriceSizeInventory}

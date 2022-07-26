@@ -3,13 +3,13 @@ const PriceSizeInventory = [
         name : 'Meesho Price',
         require : true,
         desc : 'Customers buying at this price will be able to return products for all return reasons.',
-        type:"text"
+        type:"number"
     },
     {
         name : 'Wrong/Defective Returns Price',
         require : true,
         desc : 'Customers buying at this price can only return wrong/defective delivered products.',
-        type:"text"
+        type:"number"
     },
     {
         name : 'MRP',
