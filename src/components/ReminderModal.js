@@ -20,8 +20,14 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
 
       <Modal.Body >
-        <Progress />
+        <p> progress on images </p>
+        <Progress numberOfUpload = "1" maxUpload = "5" />
+        <br />
 
+        <p>progress on details</p>
+        <Progress numberOfUpload = "2" maxUpload = "8" />
+        
+        <br />
         <h4>Why should you add more Images?</h4>
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,

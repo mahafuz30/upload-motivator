@@ -4,9 +4,12 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const Progress = (props) => {
 
+    const [percent , setPercent] = useState(props.numberOfUpload*100/props.maxUpload);
+    const [fill , setFill] = useState(percent);
 
-    const [fill , setFill] = useState(50);
+    console.log(percent);
     return <ProgressBar now={fill} />;
+
 }
 
 export default Progress;
