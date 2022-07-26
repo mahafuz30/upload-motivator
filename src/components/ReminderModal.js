@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaDna, FaImages } from "react-icons/fa";
+import Progress from './ProgressBar';
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -17,7 +18,10 @@ function MyVerticallyCenteredModal(props) {
           Add more fields/Images
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+
+      <Modal.Body >
+        <Progress />
+
         <h4>Why should you add more Images?</h4>
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
