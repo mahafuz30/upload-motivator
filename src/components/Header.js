@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import {Navbar,Container, Nav, Button} from 'react-bootstrap'
 import MeeshoLogo from '../Images/Meesho.png'
-
-export default class Header extends Component {
-  render() {
+const Header = ({hideButton})=> {
     return (
       <Navbar fixed='top' expand="lg">
         <Container>
@@ -15,12 +13,13 @@ export default class Header extends Component {
             />
           </Navbar.Brand>
 
-          <Button variant='light' href='/addProduct'>
+          <Button hidden={hideButton} variant='light' href='/addProduct'>
             Add Product
           </Button>
 
         </Container>
       </Navbar>
     )
-  }
 }
+
+export default Header;

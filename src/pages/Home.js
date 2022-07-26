@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
 
-export default class Home extends Component {
-  render() {
+const Home = ()=> {
     return (
-      <div><Header/></div>
+      <div><Header 
+      hideButton={false}
+      /></div>
       
     )
-  }
 }
+
+export default  Home;
