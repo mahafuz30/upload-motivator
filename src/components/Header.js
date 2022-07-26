@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import {Navbar,Container, Nav, Button} from 'react-bootstrap'
+import {Navbar,Container, Button} from 'react-bootstrap'
 import MeeshoLogo from '../Images/Meesho.png'
 const Header = ({hideButton})=> {
     return (
       <Navbar fixed='top' expand="lg">
         <Container>
-          <Navbar.Brand href='#' style={{marginRight:"auto"}}>
+          <Navbar.Brand href='/' style={{marginRight:"auto"}}>
             <img
             src={MeeshoLogo}
             height="30"
