@@ -3,7 +3,7 @@ import {Navbar,Container, Button} from 'react-bootstrap'
 import MeeshoLogo from '../Images/Meesho.png'
 const Header = ({hideButton})=> {
     return (
-      <Navbar fixed='top' expand="lg">
+      <Navbar  expand="lg">
         <Container>
           <Navbar.Brand href='/' style={{marginRight:"auto"}}>
             <img

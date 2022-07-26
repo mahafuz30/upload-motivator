@@ -6,15 +6,13 @@ import Header from "../components/Header";
 import ImageHandeler from "../components/ImageHandeler";
 import ReminderModal from "../components/ReminderModal";
 import { PriceSizeInventory, ProductDetails, OtherAttributes } from "../Utils/DummyFormData";
-
-export default class ProductDescForm extends Component {
-  render() {
+const ProductDescForm = ()=>{
     return (
       <>
       <Container direction="vertical" gap={1}>
         <Header hideButton={true} />
         <Form>
-          <Stack style={{ marginTop: 100 }}>
+          <Stack style={{ marginTop: 20 }}>
             <ImageHandeler/>
             <FormFieldGenerator
               formField={PriceSizeInventory}
@@ -36,5 +34,6 @@ export default class ProductDescForm extends Component {
       </>
 
     );
-  }
 }
+
+export default ProductDescForm;
