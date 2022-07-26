@@ -43,5 +43,16 @@ const PriceSizeInventory = [
 
 ]
 
+// For Select 
+const select = {
+    name : 'Size',
+    require : true,
+    desc : '',
+    option:[
+        'a',
+        'b',
+        'c'
+    ]
+}
 
 export {PriceSizeInventory};
