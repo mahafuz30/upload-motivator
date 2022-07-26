@@ -4,9 +4,11 @@ import FormFieldGenerator from "../components/FormFieldGenerator";
 import FormHeader from "../components/FormHeader";
 import Header from "../components/Header";
 import ImageHandeler from "../components/ImageHandeler";
+import ReminderModal from "../components/ReminderModal";
 import { PriceSizeInventory, ProductDetails, OtherAttributes } from "../Utils/DummyFormData";
 const ProductDescForm = ()=>{
     return (
+      <>
       <Container direction="vertical" gap={1}>
         <Header hideButton={true} />
         <Form>
@@ -27,7 +29,10 @@ const ProductDescForm = ()=>{
             />
           </Stack>
         </Form>
+        <ReminderModal />
       </Container>
+      </>
+
     );
 }
 
