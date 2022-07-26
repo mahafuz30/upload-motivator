@@ -15,7 +15,7 @@ export default class Header extends Component {
             />
           </Navbar.Brand>
 
-          <Button variant='light' href='#'>
+          <Button variant='light' href='/addProduct'>
             Add Product
           </Button>
 
