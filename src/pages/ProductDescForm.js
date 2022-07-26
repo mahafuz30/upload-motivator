@@ -5,9 +5,7 @@ import FormHeader from "../components/FormHeader";
 import Header from "../components/Header";
 import ImageHandeler from "../components/ImageHandeler";
 import { PriceSizeInventory, ProductDetails, OtherAttributes } from "../Utils/DummyFormData";
-
-export default class ProductDescForm extends Component {
-  render() {
+const ProductDescForm = ()=>{
     return (
       <Container direction="vertical" gap={1}>
         <Header hideButton={true} />
@@ -31,5 +29,6 @@ export default class ProductDescForm extends Component {
         </Form>
       </Container>
     );
-  }
 }
+
+export default ProductDescForm;
