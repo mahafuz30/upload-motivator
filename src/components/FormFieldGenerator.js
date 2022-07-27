@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import FormHeader from "./FormHeader";
+import { ProductDescContext } from "../context/ProductDescContext";
+
+const handelCoinUpdate = (e) => {
+  console.log(e.target.value);
+};
 
 export default function FormFieldGenerator({ formField, text }) {
+  const { handelChangeForm } = useContext(ProductDescContext);
   return (
     <Container>
       <FormHeader text={text} />
@@ -22,20 +28,27 @@ export default function FormFieldGenerator({ formField, text }) {
                 className="mb-3"
                 controlId="formPlaintextPassword"
               >
-                <Form.Label column>{value.name} {value.require?<span style={{color:"red"}}>*</span>:null}</Form.Label>
+                <Form.Label column>
+                  {value.name}{" "}
+                  {value.require ? (
+                    <span style={{ color: "red" }}>*</span>
+                  ) : null}
+                </Form.Label>
                 <Col>
                   {value.type === "select" ? (
-                    <Form.Select>
+                    <Form.Select onChange={(e)=>handelChangeForm(e,text)}>
                       <option>Select {value.name}</option>
-                      {value.option.map((option,idx)=>(
+                      {value.option.map((option, idx) => (
                         <option>{option}</option>
                       ))}
                     </Form.Select>
                   ) : (
                     <Form.Control
+                      name={value.name}
                       type={value.type}
                       placeholder={value.name}
                       required={value.require}
+                      onChange={(e)=>handelChangeForm(e,text)}
                     />
                   )}
                 </Col>

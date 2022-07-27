@@ -3,49 +3,57 @@ const PriceSizeInventory = [
         name : 'Meesho Price',
         require : true,
         desc : 'Customers buying at this price will be able to return products for all return reasons.',
-        type:"number"
+        type:"number",
+        value:null,
     },
     {
         name : 'Wrong/Defective Returns Price',
         require : true,
         desc : 'Customers buying at this price can only return wrong/defective delivered products.',
-        type:"number"
+        type:"number",
+        value:null,
     },
     {
         name : 'MRP',
         require : true,
         desc : "",
-        type:"number"
+        type:"number",
+        value:null,
     },
     {
         name : 'GST',
         require : true,
         desc : "",
-        type:"number"
+        type:"number",
+        value:null,
     },
     {
         name : 'HSN Code',
         require : true,
         desc : "",
-        type:"text"
+        type:"text",
+        value:null,
     },
     {
         name : 'Style code/ Product ID (optional)',
         require : false,
         desc : '',
-        type:"number"
+        type:"number",
+        value:null,
     },
     {
         name : 'Product Name',
         require : true,
         desc : '',
-        type:"text"
+        type:"text",
+        value:null,
     },
     {
         name : 'Size',
         require : true,
         desc : '',
-        type:"text"
+        type:"text",
+        value:null,
     },
 
 ]
@@ -57,14 +65,16 @@ const ProductDetails = [
         require :true,
         desc : '',
         type : "select",
-        option : ['Red','Green', 'Blue']
+        option : ['Red','Green', 'Blue'],
+        value:null,
     },
     {
         name : "Multipack",
         require : true,
         desc :'',
         type :"select",
-        option :['Pack of 2', 'Pack of 5']
+        option :['Pack of 2', 'Pack of 5'],
+        value:null,
     }
 ]
 
@@ -74,63 +84,72 @@ const OtherAttributes = [
         require :false,
         desc :'',
         type :"select",
-        option :['Running Blouse', "Without Blouse"]
+        option :['Running Blouse', "Without Blouse"],
+        value:null,
     },
     {
         name : "Blouse Color",
         require :false,
         desc :'',
         type :"select",
-        option :["Black", "Blue"]
+        option :["Black", "Blue"],
+        value:null,
     },
     {
         name : "Blouse Fabric",
         require :false,
         desc :'',
         type :"select",
-        option :['Acrylic', 'Art Silk']
+        option :['Acrylic', 'Art Silk'],
+        value:null,
     },
     {
         name : "Blouse Length (mtrs)",
         require :false,
         desc :'',
         type :"select",
-        option :['0.5', '0.6']
+        option :['0.5', '0.6'],
+        value:null,
     },
     {
         name : "Blouse Pattern",
         require :false,
         desc :"",
         type :"select",
-        option :['Solid','Zari Woven']
+        option :['Solid','Zari Woven'],
+        value:null,
     },
     {
         name : "Border",
         require :false,
         desc :'',
         type :"select",
-        option :['No Border', 'Printed']
+        option :['No Border', 'Printed'],
+        value:null,
     },
     {
         name :"Occasion",
         require :false,
         desc :'',
         type :"select",
-        option :['Daily', 'Party']
+        option :['Daily', 'Party'],
+        value:null,
     },
     {
         name :"Pallu Details",
         require :false,
         desc :'',
         type :"select",
-        option :['Embellished','Embroidered']
+        option :['Embellished','Embroidered'],
+        value:null,
     },
     {
         name :"Pattern",
         require :false,
         desc :'',
         type :"select",
-        option :['Applique', 'Checked']
+        option :['Applique', 'Checked'],
+        value:null,
     },
     // {
     //     name :"Display Test Print or Pattern Type",
@@ -172,32 +191,52 @@ const OtherAttributes = [
         require :false,
         desc :'',
         type :"select",
-        option :['India', "Bangladesh"]
+        option :['India', "Bangladesh"],
+        value:null,
     },
     {
         name :"Description",
         require :false,
         desc :'',
-        type :"text"
+        type :"text",
+        value:null,
     },
     {
         name : "Manufacture Details",
         require :false,
         desc :'',
-        type :'text'
+        type :'text',
+        value:null,
     },
     {
         name :"Packer Details",
         require :false,
         desc :'',
-        type :"text"
+        type :"text",
+        value:null,
     },
     {
         name : "Importer Details",
         require :false,
         desc :'',
-        type :"text"
+        type :"text",
+        value:null,
     }
 ]
 
-export {PriceSizeInventory,ProductDetails, OtherAttributes};
+const FormData = [
+    {
+        formName : "Price, Size and Inventory",
+        data : PriceSizeInventory
+    },
+    {
+        formName : "Product Details",
+        data : ProductDetails
+    },
+    {
+        formName : "Other Attributes",
+        data : OtherAttributes
+    }
+]
+
+export default FormData;

@@ -1,8 +1,9 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useContext, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { FaDna, FaImages, FaCoins } from "react-icons/fa";
+import { FaDna, FaImages } from "react-icons/fa";
+import { ProductDescContext } from '../context/ProductDescContext';
 import Progress from './ProgressBar';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -75,12 +76,11 @@ function MyVerticallyCenteredModal(props) {
 
 const ReminderModal = () => {
 
-  const [modalShow, setModalShow] = useState(false);
+  const {modalShow, handelSubmit, setModalShow} = useContext(ProductDescContext);
 
   return (
     <>
-      <Button variant="" onClick={() => setModalShow(true)} style={{ marginLeft: '600px', backgroundColor: 'rgb(233, 30, 99)', color: 'white' }}>
-        continue
+      <Button variant=""   onClick={handelSubmit} style={{marginLeft:'600px', backgroundColor:'rgb(233, 30, 99)', color:'white'}}>
       </Button>
 
       <MyVerticallyCenteredModal

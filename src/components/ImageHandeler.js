@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Container, InputGroup, Form, Button, Stack } from "react-bootstrap";
+import { ProductDescContext } from "../context/ProductDescContext";
 
 export default function ImageHandeler() {
   const inputRef = useRef(null);
@@ -7,18 +8,13 @@ export default function ImageHandeler() {
     inputRef.current.click();
   };
 
-  const [fileObj, setfileObj] = useState([]);
-  const handelImage = (e) => {
-    setfileObj([...fileObj, e.target.files]);
-  };
 
-  const handelRemove = (idx)=>{
-    const fileObjM = [...fileObj];
-    fileObjM.splice(idx,1);
-    setfileObj(fileObjM);
-  }
 
   const [hover, setHover] = useState(false);
+  const {handelImage,
+    handelRemove,
+    fileObj,
+    setfileObj} = useContext(ProductDescContext)
   return (
     <Container>
       <input
