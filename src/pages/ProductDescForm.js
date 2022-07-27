@@ -4,11 +4,7 @@ import FormFieldGenerator from "../components/FormFieldGenerator";
 import Header from "../components/Header";
 import ImageHandeler from "../components/ImageHandeler";
 import ReminderModal from "../components/ReminderModal";
-import {
-  PriceSizeInventory,
-  ProductDetails,
-  OtherAttributes,
-} from "../Utils/DummyFormData";
+
 import { ProductDescContextProvider, ProductDescContext} from "../context/ProductDescContext";
 const ProductDescForm = () => {
   
@@ -20,8 +16,7 @@ const ProductDescForm = () => {
 };
 
 const FormContextHelper = ()=>{
-  const {coins,formDataC} = useContext(ProductDescContext);
-  console.log(formDataC);
+  const {coins,formDataC,handelSubmit} = useContext(ProductDescContext);
   return(
     <Container direction="vertical" gap={1}>
         <Header hideButton={true} />
