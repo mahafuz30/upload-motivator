@@ -69,6 +69,8 @@ function MyVerticallyCenteredModal(props) {
           <Button style={{ backgroundColor: 'rgb(233, 30, 99)', color: 'white' }}>skip</Button>
         </Link>
 
+        <Button style={{ backgroundColor: 'white', color:'black' }} onClick={props.onHide} >cancel</Button>
+
       </Modal.Footer>
     </Modal>
   );
