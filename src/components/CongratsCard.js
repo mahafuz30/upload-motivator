@@ -1,6 +1,7 @@
 import Progress from './ProgressBar';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { FaCoins } from 'react-icons/fa';
 
 function CongratsCard() {
   return (
@@ -10,7 +11,7 @@ function CongratsCard() {
         <Card.Title>Your overall progress</Card.Title>
         <Progress numberOfUpload = "1" maxUpload = "5" />
         <Card.Text>
-          You earned <span style={{color:'goldenrod'}}>150 Ad Coins</span>
+          You earned <span style={{color:'goldenrod'}}><FaCoins /> 150 Ad Coins</span>
         </Card.Text>
         <Button variant="danger">Upload more</Button>
       </Card.Body>
