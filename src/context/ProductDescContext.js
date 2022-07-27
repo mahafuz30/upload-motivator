@@ -5,6 +5,11 @@ const ProductDescContext = createContext();
 
 function ProductDescContextProvider({ children }) {
   const [formDataC, setformData] = useState([]);
+  const [coins, setcoins] = useState({
+    totalCount:0,
+    coinCount:0
+  });
+
 
   const [fileObj, setfileObj] = useState([]);
   const handelImage = (e) => {
@@ -38,21 +43,25 @@ function ProductDescContextProvider({ children }) {
 
   const handelSubmit = () => {
     let coinCount = 0;
+    let totalCount = 0;
     setModalShow(true);
     formDataC.forEach((formField) => {
       formField.data.forEach((formValues) => {
-        if (formValues.value) {
+        totalCount += 1;
+        if (formValues.value && formValues.type !== "select") {
+          coinCount = coinCount + 1;
+        }
+        if(formValues.value && formValues.type === "select" && !formValues.value.includes("Select")){
           coinCount = coinCount + 1;
         }
       });
     });
-    console.log(coinCount);
+    setcoins({totalCount,coinCount})
   };
 
   useEffect(() => {
     setformData(formData);
   }, []);
-  const [coins, setcoins] = useState(0);
   return (
     <ProductDescContext.Provider
       value={{

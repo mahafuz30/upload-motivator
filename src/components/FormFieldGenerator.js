@@ -36,7 +36,10 @@ export default function FormFieldGenerator({ formField, text }) {
                 </Form.Label>
                 <Col>
                   {value.type === "select" ? (
-                    <Form.Select onChange={(e)=>handelChangeForm(e,text)}>
+                    <Form.Select
+                      onChange={(e) => handelChangeForm(e, text)}
+                      name={value.name}
+                    >
                       <option>Select {value.name}</option>
                       {value.option.map((option, idx) => (
                         <option>{option}</option>
@@ -48,7 +51,8 @@ export default function FormFieldGenerator({ formField, text }) {
                       type={value.type}
                       placeholder={value.name}
                       required={value.require}
-                      onChange={(e)=>handelChangeForm(e,text)}
+                      value={value.value}
+                      onChange={(e) => handelChangeForm(e, text)}
                     />
                   )}
                 </Col>
