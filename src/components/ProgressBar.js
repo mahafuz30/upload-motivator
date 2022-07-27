@@ -6,9 +6,8 @@ const Progress = ({numberOfUpload,maxUpload}) => {
 
     const [percent , setPercent] = useState(numberOfUpload*100/maxUpload);
     const [fill , setFill] = useState(percent);
-
-    // console.log(percent);
-    return <ProgressBar now={fill} />;
+    console.log(percent);
+    return <ProgressBar now={fill} variant="danger" />;
 
 }
 
