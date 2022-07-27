@@ -1,11 +1,19 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState  } from 'react'
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaDna, FaImages } from "react-icons/fa";
 import Progress from './ProgressBar';
+import { Link , useNavigate } from 'react-router-dom';
+
+
+
 
 function MyVerticallyCenteredModal(props) {
+
+ 
+  
+
   return (
     <Modal
       {...props}
@@ -20,12 +28,9 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
 
       <Modal.Body >
-        <p> progress on images </p>
+        <p> progress on product </p>
         <Progress numberOfUpload = "1" maxUpload = "5" />
         <br />
-
-        <p>progress on details</p>
-        <Progress numberOfUpload = "2" maxUpload = "8" />
         
         <br />
         <h4>Why should you add more Images?</h4>
@@ -39,8 +44,11 @@ function MyVerticallyCenteredModal(props) {
         <Container style={{display:'flex' , flexDirection:'row', justifyContent:'space-evenly' }} >
           
           <div style={{display:'flex' , flexDirection:'row' , justifyContent:'space-between' }}>
+          
+          <Link to="/addProduct" onClick={props.onHide}>
           <FaImages style={{margin:'auto'}} />
           <h5 style={{margin:'auto'}}>Add Images</h5>
+          </Link>
           </div>
           
           <div style={{display:'flex' , flexDirection:'row' , justifyContent:'space-between' }}>
@@ -54,7 +62,10 @@ function MyVerticallyCenteredModal(props) {
 
       </Modal.Body>
       <Modal.Footer>
-        <Button style={{backgroundColor:'rgb(233, 30, 99)', color:'white'}} onClick={props.onHide}>skip</Button>
+        <Link to="/congrats">
+          <Button style={{backgroundColor:'rgb(233, 30, 99)', color:'white'}}>skip</Button>
+        </Link>
+        
       </Modal.Footer>
     </Modal>
   );

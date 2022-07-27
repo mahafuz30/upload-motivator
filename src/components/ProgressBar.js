@@ -8,7 +8,7 @@ const Progress = (props) => {
     const [fill , setFill] = useState(percent);
 
     console.log(percent);
-    return <ProgressBar now={fill} />;
+    return <ProgressBar now={fill} variant="danger" />;
 
 }
 
