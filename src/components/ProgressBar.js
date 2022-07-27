@@ -2,9 +2,9 @@ import { useState } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
-const Progress = (props) => {
+const Progress = ({numberOfUpload,maxUpload}) => {
 
-    const [percent , setPercent] = useState(props.numberOfUpload*100/props.maxUpload);
+    const [percent , setPercent] = useState(numberOfUpload*100/maxUpload);
     const [fill , setFill] = useState(percent);
 
     console.log(percent);

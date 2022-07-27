@@ -1,8 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import FormHeader from "./FormHeader";
+import {ProductDescContext} from '../context/ProductDescContext'
+
+const handelCoinUpdate = (e)=>{
+  console.log(e.target.value);
+}
 
 export default function FormFieldGenerator({ formField, text }) {
+  const {setCoins} = useContext(ProductDescContext)
   return (
     <Container>
       <FormHeader text={text} />
@@ -25,7 +31,9 @@ export default function FormFieldGenerator({ formField, text }) {
                 <Form.Label column>{value.name} {value.require?<span style={{color:"red"}}>*</span>:null}</Form.Label>
                 <Col>
                   {value.type === "select" ? (
-                    <Form.Select>
+                    <Form.Select
+                    onChange={handelCoinUpdate}
+                    >
                       <option>Select {value.name}</option>
                       {value.option.map((option,idx)=>(
                         <option>{option}</option>
@@ -36,6 +44,7 @@ export default function FormFieldGenerator({ formField, text }) {
                       type={value.type}
                       placeholder={value.name}
                       required={value.require}
+                      onChange={handelCoinUpdate}
                     />
                   )}
                 </Col>
